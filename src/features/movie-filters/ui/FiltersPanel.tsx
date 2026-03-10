@@ -1,6 +1,6 @@
 import { startTransition, useMemo, useState } from 'react';
 import { useNavigate, useSearch } from '@tanstack/react-router';
-import { useGetGenresQuery } from '@entities/movie/model/movieApi';
+import { useGetGenresQuery } from '@entities/movie';
 import { Button } from '@shared/ui/button';
 import { Badge } from '@shared/ui/badge';
 import { Skeleton } from '@shared/ui/skeleton';

@@ -4,7 +4,7 @@ import favoritesReducer, {
   removeFavorite,
   type FavoritesState,
 } from '../favoritesSlice';
-import type { Movie } from '@entities/movie/model/types';
+import type { Movie } from '@entities/movie';
 
 // Mock localStorage so the initial state loader doesn't fail in test env
 vi.stubGlobal('localStorage', {

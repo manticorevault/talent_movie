@@ -1,7 +1,7 @@
 import { createSlice, type PayloadAction, type Middleware } from '@reduxjs/toolkit';
 import { z } from 'zod';
 import { storage } from '@shared/lib/storage';
-import type { Movie } from '@entities/movie/model/types';
+import type { Movie } from '@entities/movie';
 
 const FAVORITES_STORAGE_KEY = 'talent-movie-favorites';
 

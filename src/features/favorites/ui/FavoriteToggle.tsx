@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Button } from '@shared/ui/button';
 import { Star } from 'lucide-react';
 import { toggleFavorite, selectIsFavorite } from '../model/favoritesSlice';
-import type { Movie } from '@entities/movie/model/types';
+import type { Movie } from '@entities/movie';
 
 interface FavoriteToggleProps {
   movie: Movie;

@@ -49,6 +49,7 @@ export function SearchInput() {
       <Input
         data-testid="search-input"
         aria-label="Search movies"
+        aria-controls="movie-table-container"
         placeholder="Search movies..."
         className="pl-9"
         value={inputValue}

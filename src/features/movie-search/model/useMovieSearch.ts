@@ -1,5 +1,5 @@
 import { useSearch } from '@tanstack/react-router';
-import { useSearchMoviesQuery, useDiscoverMoviesQuery } from '@entities/movie/model/movieApi';
+import { useSearchMoviesQuery, useDiscoverMoviesQuery } from '@entities/movie';
 
 /**
  * Orchestrator hook that bridges text search and discover endpoints.
