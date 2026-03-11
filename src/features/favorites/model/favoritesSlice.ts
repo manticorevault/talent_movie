@@ -1,4 +1,4 @@
-import { createSlice, type PayloadAction, type Middleware } from '@reduxjs/toolkit';
+import { createSlice, type PayloadAction, type Middleware, createSelector } from '@reduxjs/toolkit';
 import { z } from 'zod';
 import { storage } from '@shared/lib/storage';
 import type { Movie } from '@entities/movie';
@@ -61,8 +61,9 @@ export const selectFavorites = (state: { favorites: FavoritesState }) => state.f
 export const selectIsFavorite = (state: { favorites: FavoritesState }, movieId: number) =>
   Boolean(state.favorites.items[movieId]);
 
-export const selectFavoritesArray = (state: { favorites: FavoritesState }) =>
-  Object.values(state.favorites.items);
+export const selectFavoritesArray = createSelector([selectFavorites], (items) =>
+  Object.values(items),
+);
 
 // --- Middleware for localStorage persistence ---
 export const favoritesMiddleware: Middleware = (store) => (next) => (action) => {
