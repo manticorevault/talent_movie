@@ -208,6 +208,7 @@ export function MovieTable() {
       dispatch(setSortBy(nextSort));
       startTransition(() => {
         navigate({
+          // @ts-expect-error - Route parameter strict typing mismatch natively
           search: (prev: Record<string, unknown>) => ({
             ...prev,
             sort: nextSort,
@@ -224,6 +225,7 @@ export function MovieTable() {
     (newPage: number) => {
       startTransition(() => {
         navigate({
+          // @ts-expect-error - Route parameter strict typing mismatch natively
           search: (prev: Record<string, unknown>) => ({
             ...prev,
             page: newPage,
@@ -241,6 +243,7 @@ export function MovieTable() {
   );
 
   // --- TanStack Table instance ---
+  // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
     data: movies,
     columns,

@@ -80,6 +80,7 @@ const columns: ColumnDef<Movie, unknown>[] = [
 export function FavoritesList() {
   const favorites = useSelector(selectFavoritesArray);
 
+  // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
     data: favorites,
     columns,
