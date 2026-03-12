@@ -10,7 +10,7 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     env:
-      VITE_TMDB_API_KEY: 'test-api-key'
+      VITE_TMDB_API_KEY: ${{ secrets.VITE_TMDB_API_KEY }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
