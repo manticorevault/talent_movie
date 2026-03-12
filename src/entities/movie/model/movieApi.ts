@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { env } from '@shared/config/env';
 import { TMDB_BASE_URL } from '@shared/api/constants';
-import {
+import type {
   MoviesResponse,
   DiscoverMoviesParams,
   SearchMoviesParams,

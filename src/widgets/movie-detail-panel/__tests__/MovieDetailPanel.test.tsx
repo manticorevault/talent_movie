@@ -91,8 +91,7 @@ describe('MovieDetailPanel', () => {
     const poster = screen.getByTestId('movie-poster') as HTMLImageElement;
     fireEvent.load(poster);
 
-    const skeleton = screen.getByTestId('movie-poster-skeleton');
-    expect(skeleton.className).toContain('hidden');
+    expect(screen.queryByTestId('movie-poster-skeleton')).not.toBeInTheDocument();
   });
 
   it('renders metadata fields (rating, release date, runtime, language)', () => {

@@ -31,11 +31,11 @@ export function SearchInput() {
     const sanitized = sanitizeInput(debouncedValue);
     startTransition(() => {
       navigate({
-        search: (prev: Record<string, unknown>) => ({
+        search: ((prev: Record<string, unknown>) => ({
           ...prev,
           q: sanitized || undefined,
           page: 1,
-        }),
+        })) as never,
       });
     });
   }, [debouncedValue, navigate]);

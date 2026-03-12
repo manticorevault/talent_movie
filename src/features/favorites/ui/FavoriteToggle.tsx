@@ -36,7 +36,7 @@ export const FavoriteToggle = React.memo(({ movie, showLabel = false }: Favorite
       >
         <Star
           size={18}
-          className={isFavorite ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground'}
+          className={isFavorite ? 'text-[#F2AC57] fill-[#F2AC57]' : 'text-muted-foreground'}
         />
         {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
       </Button>
@@ -56,7 +56,7 @@ export const FavoriteToggle = React.memo(({ movie, showLabel = false }: Favorite
     >
       <Star
         size={18}
-        className={isFavorite ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground'}
+        className={isFavorite ? 'text-[#F2AC57] fill-[#F2AC57]' : 'text-muted-foreground'}
       />
     </Button>
   );
