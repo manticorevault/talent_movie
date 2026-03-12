@@ -55,11 +55,11 @@ export function FiltersPanel() {
   const updateSearch = (updates: Record<string, unknown>) => {
     startTransition(() => {
       navigate({
-        search: (prev: Record<string, unknown>) => ({
+        search: ((prev: Record<string, unknown>) => ({
           ...prev,
           ...updates,
           page: 1,
-        }),
+        })) as never,
       });
     });
   };
