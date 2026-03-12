@@ -8,6 +8,8 @@
 
 A production-grade, highly scalable single-page application built to explore movies using the TMDB API. Engineered with a strict adherence to **Feature-Sliced Design (FSD)**, this project serves as a showcase of senior-level frontend architecture, state management patterns, and performance optimizations.
 
+Available live in: https://talent-movie.vercel.app/movies
+
 ---
 
 ## 🏗 Architecture & Design Patterns
