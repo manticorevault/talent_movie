@@ -110,7 +110,7 @@ export function FavoritesList() {
         data-testid="favorites-empty"
         className="flex flex-col items-center justify-center gap-4 py-24 text-muted-foreground"
       >
-        <Heart size={64} strokeWidth={1.5} />
+        <Heart size={64} strokeWidth={1.5} className="text-[#FF694D]" />
         <p className="text-xl font-medium">No favorites yet</p>
         <p className="text-sm">Movies you add to favorites will appear here.</p>
         <Button asChild variant="outline">
@@ -126,8 +126,8 @@ export function FavoritesList() {
       role="grid"
       aria-label="Favorites"
       aria-rowcount={favorites.length}
-      style={{ overflowY: 'auto', height: `${TABLE_HEIGHT}px` }}
-      className="rounded-md border"
+      style={{ overflowY: 'auto', maxHeight: `${TABLE_HEIGHT}px` }}
+      className="rounded-[36px] border bg-card shadow-sm overflow-hidden"
     >
       <Table>
         <TableHeader className="sticky top-0 z-10 bg-background">

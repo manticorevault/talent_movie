@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    // --- Talento Brand SCSS Variables ---
+    $brand-primary: hsl(207, 92%, 52%); // #148FF6 (Hex approximation in HSL)
+    $brand-primary-dark: hsl(207, 92%, 60%); // Lighter for dark mode
+
+    $brand-secondary: hsl(205, 24%, 28%); // #364A59
+    $brand-accent-coral: hsl(10, 100%, 65%); // #FF694D
+
+    $brand-bg-light: hsl(0, 0%, 100%); // White
+    $brand-bg-dark: hsl(0, 0%, 5%); // Near Black
+
+    $brand-border-radius: 36px;
+
+    :root {
+        // Basic Layout Colors
+        --background: #{$brand-bg-light};
+        --foreground: #{$brand-secondary};
+
+        // Cards & Popovers
+        --card: #{$brand-bg-light};
+        --card-foreground: #{$brand-secondary};
+        --popover: #{$brand-bg-light};
+        --popover-foreground: #{$brand-secondary};
+
+        // Brand Colors
+        --primary: #{$brand-primary};
+        --primary-foreground: hsl(0, 0%, 100%);
+
+        // Subtle elements
+        --secondary: hsl(210, 40%, 96.1%);
+        --secondary-foreground: #{$brand-secondary};
+
+        --muted: hsl(210, 40%, 96.1%);
+        --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+
+        --accent: #{$brand-accent-coral};
+        --accent-foreground: hsl(0, 0%, 100%);
+
+        --destructive: hsl(0, 84.2%, 60.2%);
+        --destructive-foreground: hsl(210, 40%, 98%);
+
+        // Borders & Inputs
+        --border: hsl(214.3, 31.8%, 91.4%);
+        --input: hsl(214.3, 31.8%, 91.4%);
+        --ring: #{$brand-primary};
+
+        --radius: #{$brand-border-radius};
+    }
+
+    // SCSS Nesting for Dark Mode mapping
+    .dark {
+        --background: #{$brand-bg-dark};
+        --foreground: hsl(210, 40%, 98%);
+
+        --card: #{$brand-bg-dark};
+        --card-foreground: hsl(210, 40%, 98%);
+
+        --popover: #{$brand-bg-dark};
+        --popover-foreground: hsl(210, 40%, 98%);
+
+        --primary: #{$brand-primary-dark};
+        --primary-foreground: hsl(0, 0%, 100%);
+
+        --secondary: hsl(217.2, 32.6%, 17.5%);
+        --secondary-foreground: hsl(210, 40%, 98%);
+
+        --muted: hsl(217.2, 32.6%, 17.5%);
+        --muted-foreground: hsl(215, 20.2%, 65.1%);
+
+        --accent: #{$brand-accent-coral};
+        --accent-foreground: hsl(0, 0%, 100%);
+
+        --destructive: hsl(0, 62.8%, 30.6%);
+        --destructive-foreground: hsl(210, 40%, 98%);
+
+        --border: hsl(217.2, 32.6%, 17.5%);
+        --input: hsl(217.2, 32.6%, 17.5%);
+        --ring: #{$brand-primary-dark};
+    }
+}
+
+@layer base {
+
+    // Apply standard typography rules
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    // Talento design system typography scales
+    h1 {
+        @apply text-[40px] leading-[44px] font-semibold;
+    }
+
+    h2 {
+        @apply text-[32px] leading-tight font-bold;
+    }
+
+    h3 {
+        @apply text-[24px] leading-tight font-bold;
+    }
+
+    * {
+        @apply border-border;
+    }
+}

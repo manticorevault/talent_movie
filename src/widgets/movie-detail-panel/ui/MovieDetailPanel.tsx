@@ -42,24 +42,26 @@ export function MovieDetailPanel({ movie }: MovieDetailPanelProps) {
       {/* Poster column */}
       <div className="relative">
         {posterUrl ? (
-          <>
-            <Skeleton
-              data-testid="movie-poster-skeleton"
-              className={isPosterLoaded ? 'hidden' : 'block aspect-[2/3] w-full rounded-lg'}
-            />
+          <div className="relative aspect-[2/3] w-full overflow-hidden rounded-[36px] shadow-lg">
+            {!isPosterLoaded && (
+              <Skeleton
+                data-testid="movie-poster-skeleton"
+                className="absolute inset-0 h-full w-full"
+              />
+            )}
             <img
               data-testid="movie-poster"
               src={posterUrl}
               alt={`${movie.title} poster`}
               loading="lazy"
               onLoad={() => setIsPosterLoaded(true)}
-              className={`${isPosterLoaded ? 'block' : 'hidden'} w-full rounded-lg shadow-lg`}
+              className={`h-full w-full object-cover transition-opacity duration-500 ${isPosterLoaded ? 'opacity-100' : 'opacity-0'}`}
             />
-          </>
+          </div>
         ) : (
           <div
             data-testid="movie-poster"
-            className="flex aspect-[2/3] w-full items-center justify-center rounded-lg bg-muted text-muted-foreground"
+            className="flex aspect-[2/3] w-full items-center justify-center rounded-[36px] bg-muted text-muted-foreground border border-border"
           >
             No poster available
           </div>
@@ -67,12 +69,12 @@ export function MovieDetailPanel({ movie }: MovieDetailPanelProps) {
       </div>
 
       {/* Metadata column */}
-      <div className="space-y-4">
-        <h1 data-testid="movie-title" className="text-3xl font-bold tracking-tight">
+      <div className="space-y-6">
+        <h1 data-testid="movie-title" className="text-4xl font-bold tracking-tight text-foreground">
           {movie.title}
         </h1>
 
-        <p className="text-muted-foreground leading-relaxed">{movie.overview}</p>
+        <p className="text-lg text-muted-foreground leading-relaxed">{movie.overview}</p>
 
         <Separator />
 
@@ -92,7 +94,7 @@ export function MovieDetailPanel({ movie }: MovieDetailPanelProps) {
           <div>
             <p className="text-muted-foreground">Rating</p>
             <p className="flex items-center gap-1 font-semibold">
-              <Star size={14} className="text-yellow-400 fill-yellow-400" />
+              <Star size={14} className="text-[#F2AC57] fill-[#F2AC57]" />
               {movie.vote_average.toFixed(1)}
             </p>
           </div>

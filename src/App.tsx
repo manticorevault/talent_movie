@@ -11,7 +11,7 @@ function App() {
           <div className="container mx-auto flex h-16 items-center px-4 md:px-8">
             <div className="flex gap-6 md:gap-10">
               <Link to="/movies" className="flex items-center space-x-2">
-                <Film className="h-6 w-6 text-primary" />
+                <Film className="h-6 w-6 text-[#148FF6]" />
                 <span className="inline-block font-bold">Talent Movie</span>
               </Link>
               <nav className="flex gap-6">

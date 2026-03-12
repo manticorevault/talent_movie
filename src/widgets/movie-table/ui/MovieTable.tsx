@@ -313,8 +313,8 @@ export function MovieTable() {
           role="grid"
           aria-label="Movies"
           aria-rowcount={totalResults || -1}
-          style={{ overflowY: 'auto', height: `${TABLE_HEIGHT}px` }}
-          className="rounded-md border"
+          style={{ overflowY: 'auto', maxHeight: `${TABLE_HEIGHT}px` }}
+          className="rounded-[36px] border bg-card shadow-sm overflow-hidden"
         >
           <Table>
             <TableHeader className="sticky top-0 z-10 bg-background">
@@ -364,7 +364,7 @@ export function MovieTable() {
                         data-testid="movie-row"
                         role="row"
                         aria-rowindex={virtualRow.index + 2}
-                        className="cursor-pointer hover:bg-muted/50"
+                        className="cursor-pointer hover:bg-primary/5 transition-colors"
                         onClick={() => handleRowClick(row.original.id)}
                       >
                         {row.getVisibleCells().map((cell) => (

@@ -2,11 +2,13 @@ import { MovieTable } from '@widgets/movie-table';
 
 export function MoviesPage() {
   return (
-    <div className="container mx-auto py-8">
-      <div className="mb-8 space-y-2 text-center md:text-left">
-        <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">Movies</h1>
-        <p className="text-xl text-muted-foreground">
-          Discover a world of movies tailored to your taste.
+    <div className="container mx-auto py-12">
+      <div className="mb-10 text-center md:text-left space-y-3">
+        <h1 className="text-foreground tracking-tight">
+          Explorar <span className="text-[#148FF6] tracking-tight">Filmes</span>
+        </h1>
+        <p className="text-lg text-muted-foreground max-w-2xl">
+          Descubra a nossa base de dados de filmes com filtros dinâmicos e ordenação.
         </p>
       </div>
       <MovieTable />

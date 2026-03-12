@@ -102,7 +102,7 @@ export function FiltersPanel() {
       </Button>
 
       {isOpen && (
-        <div className="rounded-lg border bg-card p-4 space-y-4">
+        <div className="border-t-2 border-b-2 border-foreground bg-card p-6 space-y-6 shadow-xl">
           {/* Genre Multi-select */}
           <div className="space-y-2">
             <label className="text-sm font-medium text-foreground">Genres</label>
